@@ -1,11 +1,11 @@
-# 🚗 AutoLoa - Plataforma de Vehículos Premium
+# 🚗 Wildcars - Plataforma de Vehículos Premium
 
 <div align="center">
-  <img src="./public/logo.webp" alt="AutoLoa Logo" width="200" height="auto">
+  <img src="./public/logowildars.webp" alt="Wildcars Logo" width="300" height="auto">
   
-  **La mejor experiencia en venta de vehículos online**
+  **Donde los buenos autos encuentran buenos dueños**
   
-  [![Astro](https://img.shields.io/badge/Astro-5.11.0-orange.svg?style=flat-square&logo=astro)](https://astro.build/)
+  [![Astro](https://img.shields.io/badge/Astro-5.11.0-red.svg?style=flat-square&logo=astro)](https://astro.build/)
   [![React](https://img.shields.io/badge/React-19.1.0-blue.svg?style=flat-square&logo=react)](https://reactjs.org/)
   [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4.1.11-38B2AC.svg?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
   [![TypeScript](https://img.shields.io/badge/TypeScript-Latest-3178C6.svg?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
@@ -22,7 +22,8 @@
 ⚡ **Carga Ultrarrápida** - Powered by Astro SSR  
 💌 **Sistema de Contacto** - Integración con Resend para emails  
 🛡️ **Anti-Spam** - Protección con hCaptcha  
-🎯 **SEO Optimizado** - Mejor posicionamiento en buscadores
+🎯 **SEO Optimizado** - Mejor posicionamiento en buscadores  
+🤝 **Partner Confiable** - Más que una automotora, tu aliado automotriz
 
 ---
 
@@ -60,8 +61,8 @@
 ### **1. Clonar el Repositorio**
 
 ```bash
-git clone https://github.com/sebahernandez/auto-loa.git
-cd auto-loa
+git clone https://github.com/sebahernandez/wildcars.git
+cd wildcars
 ```
 
 ### **2. Instalar Dependencias**
@@ -98,10 +99,10 @@ El proyecto estará disponible en `http://localhost:4321` 🎉
 ## 📁 **Estructura del Proyecto**
 
 ```text
-auto-loa/
+wildcars/
 ├── 📁 public/                    # Archivos estáticos
 │   ├── favicon.svg
-│   ├── logo.webp
+│   ├── logowildars.webp         # Logo principal de Wildcars
 │   └── frontis-autoloa.webp
 ├── 📁 src/
 │   ├── 📁 assets/               # Recursos (imágenes, iconos)
@@ -193,10 +194,11 @@ auto-loa/
 ### **📱 Componentes Interactivos**
 
 - **Navbar Responsivo** - Menú hamburguesa en móvil
-- **Hero Slider** - Carrusel de imágenes principales
+- **Hero Slider** - Carrusel de imágenes principales con transiciones suaves
 - **Product Cards** - Tarjetas de vehículos con hover effects
 - **Filtros Dinámicos** - Búsqueda por marca, modelo, precio
 - **Whatsapp Button** - Contacto directo flotante
+- **Testimoniales** - Reseñas de clientes satisfechos
 
 ### **🎨 Sistema de Diseño**
 
@@ -204,6 +206,7 @@ auto-loa/
 - **Tipografía**: Inter font family para máxima legibilidad
 - **Espaciado**: Sistema consistente basado en Tailwind
 - **Iconografía**: SVG optimizados y escalables
+- **Filosofía**: Diseño limpio que refleja confianza y profesionalismo
 
 ---
 
@@ -247,13 +250,15 @@ Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) par
 
 ## 📞 **Contacto**
 
-- **Sitio Web**: [AutoLoa](https://auto-loa.com)
-- **Email**: contacto@auto-loa.com
+- **Sitio Web**: [Wildcars](https://www.wildcars.cl)
+- **Email**: contacto@wildcars.cl
 - **Developer**: [@sebahernandez](https://github.com/sebahernandez)
+- **Filosofía**: "Donde los buenos autos encuentran buenos dueños"
 
 ---
 
 <div align="center">
   <p>⭐ ¡Si te gusta este proyecto, dale una estrella! ⭐</p>
-  <p>Hecho con ❤️ por el equipo de AutoLoa</p>
+  <p>Hecho con ❤️ por el equipo de Wildcars</p>
+  <p><em>Más que una automotora, tu partner confiable en el mundo automotriz</em></p>
 </div>
