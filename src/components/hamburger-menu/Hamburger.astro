@@ -25,7 +25,7 @@ const navLinks = [
     <div class="absolute top-16 right-4 left-4 max-w-sm mx-auto bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden animate-slide-down">
       
       <!-- Header del menú -->
-      <div class="bg-gradient-to-r from-orange-500 to-orange-600 px-6 py-4">
+      <div class="bg-gradient-to-r from-red-500 to-red-600 px-6 py-4">
         <div class="flex items-center justify-between">
           <h3 class="text-white font-semibold text-lg">Menú</h3>
           <button onclick="document.querySelector('.movil-links').classList.add('hidden')" 
@@ -41,28 +41,28 @@ const navLinks = [
       <div class="py-2">
         {navLinks.map((link, index) => (
           <a href={link.href} 
-             class="group flex items-center px-6 py-4 text-gray-800 hover:bg-orange-50 transition-all duration-200 border-b border-gray-50 last:border-b-0"
+             class="group flex items-center px-6 py-4 text-gray-800 hover:bg-red-50 transition-all duration-200 border-b border-gray-50 last:border-b-0"
              style={`animation-delay: ${index * 100}ms`}>
             
             <!-- Icono dinámico -->
-            <div class="w-10 h-10 bg-gradient-to-br from-orange-100 to-orange-200 rounded-full flex items-center justify-center mr-4 group-hover:from-orange-200 group-hover:to-orange-300 transition-all">
+            <div class="w-10 h-10 bg-gradient-to-br from-red-100 to-red-200 rounded-full flex items-center justify-center mr-4 group-hover:from-red-200 group-hover:to-red-300 transition-all">
               {link.name === "Inicio" && (
-                <svg class="w-5 h-5 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
+                <svg class="w-5 h-5 text-red-600" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M10.707 2.293a1 1 0 00-1.414 0l-9 9a1 1 0 001.414 1.414L2 12.414V17a1 1 0 001 1h14a1 1 0 001-1v-4.586l.293.293a1 1 0 001.414-1.414l-9-9z"/>
                 </svg>
               )}
               {link.name === "Nosotros" && (
-                <svg class="w-5 h-5 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
+                <svg class="w-5 h-5 text-red-600" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
                 </svg>
               )}
               {link.name === "Catálogo" && (
-                <svg class="w-5 h-5 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
+                <svg class="w-5 h-5 text-red-600" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z"/>
                 </svg>
               )}
               {link.name === "Contacto" && (
-                <svg class="w-5 h-5 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
+                <svg class="w-5 h-5 text-red-600" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
                   <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
                 </svg>
@@ -71,7 +71,7 @@ const navLinks = [
 
             <!-- Texto del enlace -->
             <div class="flex-1">
-              <span class="font-medium text-gray-900 group-hover:text-orange-600 transition-colors">
+              <span class="font-medium text-gray-900 group-hover:text-red-600 transition-colors">
                 {link.name}
               </span>
               <div class="text-sm text-gray-500 mt-0.5">
@@ -83,7 +83,7 @@ const navLinks = [
             </div>
 
             <!-- Flecha -->
-            <svg class="w-5 h-5 text-gray-400 group-hover:text-orange-600 transition-colors" 
+            <svg class="w-5 h-5 text-gray-400 group-hover:text-red-600 transition-colors" 
                  fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
             </svg>
@@ -93,7 +93,7 @@ const navLinks = [
 
       <!-- Footer del menú -->
       <div class="bg-gray-50 px-6 py-4 text-center">
-        <p class="text-sm text-gray-600">AutoLoa - Tu mejor opción</p>
+        <p class="text-sm text-gray-600">Wild Cars</p>
       </div>
     </div>
   </div>
