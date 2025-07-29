@@ -95,6 +95,16 @@ const HeroSlider: React.FC = () => {
 
   return (
     <section className="hero-section my-14 py-8 sm:py-12 lg:py-16 relative overflow-hidden">
+      <div
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: `
+        radial-gradient(125% 125% at 50% 90%, #ffffff 40%, #dc2626 100%)
+      `,
+          backgroundSize: "100% 100%",
+        }}
+      />
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <Swiper
           ref={swiperRef}
