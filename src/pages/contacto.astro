@@ -1,8 +1,13 @@
-
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+// Add type declaration for import.meta.env
+declare global {
+  interface ImportMetaEnv {
+    readonly PUBLIC_HCAPTCHA_SITE_KEY: string;
+  }
+}
 
-const keyHcaptcha = import.meta.env.HCAPTCHA_SITE_KEY;
+const keyHcaptcha: string = import.meta.env.PUBLIC_HCAPTCHA_SITE_KEY ?? '';
 ---
 
 <Layout title="Contacto - Estamos aquí para ayudarte con todas tus necesidades de vehículos 4x4" description="Estamos aquí para ayudarte con todas tus necesidades de vehículos 4x4" image="/frontis-autoloa.webp">
