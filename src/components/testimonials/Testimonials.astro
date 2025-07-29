@@ -8,23 +8,23 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
     {
-        name: "María González",
-        description: "Excelente servicio, encontré el auto perfecto para mi familia. El proceso fue rápido y transparente.",
+        name: "Richard Durán",
+        description: "El servicio de Solange es excelente, viaje desde Antofagasta y no tuve ningún problema, todo bien 🙂",
         rating: 5,
-        avatar: "MG"
+        avatar: "RD"
     },
     {
-        name: "Carlos Rodríguez", 
-        description: "Muy profesionales y honestos. Me ayudaron a conseguir el mejor precio y la financiación ideal.",
+        name: "Mario Cifuentes", 
+        description: "Excelente servicio muy confiable además muy amable están atentos a cualquier duda que tengan así que muy agradecido ,recomendable 100%",
         rating: 4,
-        avatar: "CR"
+        avatar: "MC"
     },
     {
-        name: "Ana Martínez",
-        description: "Increíble atención al cliente. El auto llegó en perfectas condiciones y justo como lo prometieron.",
-        rating: 5,
-        avatar: "AM"
-    }
+    name: "Mabel Álvarez",
+    description: `Hace poco compre una 4runner, bellisíma, súper buena la atención de Solange Roco, excelente y muy recomendable, satisfecha por la compra y agradecer la recepción, soy de Vallenar y todo ha sido transparente ..feliz😁`,
+    rating: 5,
+    avatar: "MA"
+}
 ];
 
 // Function to truncate description
@@ -42,13 +42,14 @@ const renderStars = (rating: number) => {
 };
 ---
 
+
 <section class="relative py-16 bg-[#020617]">
-       <div
-      class="absolute inset-0 z-0"
-      style={{
-        background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255, 80, 120, 0.25), transparent 70%), #000000",
-      }}
-    />
+     <div
+    class="absolute inset-0 z-0"
+    style={{
+      backgroundImage: `radial-gradient(circle 500px at 50% 200px, #3e3e3e, transparent)`,
+    }}
+  />
   
 
     <!-- Content container -->
@@ -70,7 +71,7 @@ const renderStars = (rating: number) => {
                 <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
                     <!-- Avatar and Name -->
                     <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center text-white font-semibold text-lg">
+                        <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center text-white font-semibold text-lg">
                             {testimonial.avatar}
                         </div>
                         <div class="ml-4">

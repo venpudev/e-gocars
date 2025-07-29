@@ -28,14 +28,21 @@ const contactInfo = [
         type: "Dirección",
         value: "Av. la Dehesa 1500. Torre 2, piso 4, oficina 8, La Dehesa",
         icon: "fas fa-map-marker-alt",
-        link: "https://maps.google.com/?q=Avda.+Granaderos+2223+Calama+Antofagasta+Chile",
+        link: "https://maps.google.com/?q=Av.+la+Dehesa+1500+Torre+2+piso+4+oficina+8+La+Dehesa",
         isExternal: true
     },
     {
         type: "Teléfono",
         value: "+56 9 8993 9362",
         icon: "fas fa-phone",
-        link: "tel:+56940917734",
+        link: "tel:+56989939362",
+        isExternal: false
+    },
+    {
+        type: "Teléfono 2",
+        value: "+56 9659 45652",
+        icon: "fas fa-phone",
+        link: "tel:+56965945652",
         isExternal: false
     },
     {
@@ -49,13 +56,18 @@ const contactInfo = [
 ---
 
 
-<footer class="bg-[#020617] text-white relative z-1">
-    <div
-      class="absolute inset-0 z-0"
-      style={{
-        background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255, 80, 120, 0.25), transparent 70%), #000000",
-      }}
-    />
+<footer class="bg-white text-gray-950 relative z-1">
+<div
+    class="absolute inset-0 z-0 pointer-events-none"
+    style={{
+      backgroundImage: `
+        repeating-linear-gradient(22.5deg, transparent, transparent 2px, rgba(75, 85, 99, 0.06) 2px, rgba(75, 85, 99, 0.06) 3px, transparent 3px, transparent 8px),
+        repeating-linear-gradient(67.5deg, transparent, transparent 2px, rgba(107, 114, 128, 0.05) 2px, rgba(107, 114, 128, 0.05) 3px, transparent 3px, transparent 8px),
+        repeating-linear-gradient(112.5deg, transparent, transparent 2px, rgba(55, 65, 81, 0.04) 2px, rgba(55, 65, 81, 0.04) 3px, transparent 3px, transparent 8px),
+        repeating-linear-gradient(157.5deg, transparent, transparent 2px, rgba(31, 41, 55, 0.03) 2px, rgba(31, 41, 55, 0.03) 3px, transparent 3px, transparent 8px)
+      `,
+    }}
+  />
   
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
         <!-- Main Footer Content -->
@@ -66,17 +78,17 @@ const contactInfo = [
                 <!-- Logo -->
                 <div class="flex items-center space-x-2">
                       <img class="h-8 w-auto" src="/logowildars-movil.webp" alt="auto loa - automotora">
-                        <span class="ml-2 text-xl font-bold text-white">Auto Loa</span>
+                        <span class="ml-2 text-xl font-bold text-black">Wild Cars</span>
                 </div>
                 
                 <!-- Redes Sociales -->
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Síguenos</h3>
+                    <h3 class="text-lg font-semibold mb-4 text-black">Síguenos</h3>
                     <div class="flex space-x-4">
                         {socialLinks.map((social) => (
                             <a 
                                 href={social.href} 
-                                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors duration-200"
+                                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors duration-200"
                                 aria-label={social.name}
                                 target={social.target} rel="noopener noreferrer"
                             >
@@ -89,13 +101,13 @@ const contactInfo = [
 
             <!-- Segunda Columna: Enlaces del Menú -->
             <div>
-                <h3 class="text-lg font-semibold mb-6">Navegación</h3>
+                <h3 class="text-lg font-semibold mb-6 text-black">Navegación</h3>
                 <ul class="space-y-3">
                     {menuLinks.map((link) => (
                         <li>
                             <a 
                                 href={link.href} 
-                                class="text-gray-400 hover:text-white transition-colors duration-200 flex items-center"
+                                class="text-black hover:text-red-600 transition-colors duration-200 flex items-center"
                             >
                                 <i class="fas fa-chevron-right text-xs mr-2"></i>
                                 {link.name}
@@ -107,26 +119,26 @@ const contactInfo = [
 
             <!-- Tercera Columna: Información de Contacto -->
             <div>
-                <h3 class="text-lg font-semibold mb-6">Contacto</h3>
+                <h3 class="text-lg font-semibold mb-6 text-black">Contacto</h3>
                 <div class="space-y-4">
                     {contactInfo.map((contact) => (
                         <div class="flex items-start space-x-3">
                             <div class="flex-shrink-0">
-                                <i class={`${contact.icon} text-white mt-1`}></i>
+                                <i class={`${contact.icon} text-black mt-1`}></i>
                             </div>
                             <div>
-                                <p class="text-sm font-medium text-gray-300">{contact.type}</p>
+                                <p class="text-sm font-medium text-gray-600">{contact.type}</p>
                                 {contact.link ? (
                                     <a 
                                         href={contact.link}
                                         target={contact.isExternal ? "_blank" : undefined}
                                         rel={contact.isExternal ? "noopener noreferrer" : undefined}
-                                        class="text-gray-400 hover:text-white transition-colors duration-200 underline decoration-dotted hover:decoration-solid"
+                                        class="text-black hover:text-red-600 transition-colors duration-200 underline decoration-dotted hover:decoration-solid"
                                     >
                                         {contact.value}
                                     </a>
                                 ) : (
-                                    <p class="text-gray-400">{contact.value}</p>
+                                    <p class="text-black">{contact.value}</p>
                                 )}
                             </div>
                         </div>

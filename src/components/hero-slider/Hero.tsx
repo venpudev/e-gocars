@@ -9,11 +9,11 @@ import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 
 // Import slide images
-import slide01 from "../../assets/slide-01.png";
-import slide02 from "../../assets/slide-02.png";
-import slide03 from "../../assets/slide-03.png";
-import slide04 from "../../assets/slide-04.png";
-import slide05 from "../../assets/slide-05.png";
+import slide01 from "../../assets/slide-01.jpg";
+import slide02 from "../../assets/slide-02.jpg";
+import slide03 from "../../assets/slide-03.jpg";
+import slide04 from "../../assets/slide-04.jpg";
+import slide05 from "../../assets/slide-05.jpg";
 
 interface SlideData {
   src: string;
