@@ -41,7 +41,7 @@ export const FeaturedCars: React.FC = () => {
   return (
     <section className="py-0 md:py-5 bg-white text-black">
       {/* Título separado del contenedor de Swiper */}
-      <div className="container mx-auto px-4 mb-0">
+      <div className="md:w-7xl mx-auto px-4 mb-0">
         <h2 className="text-center text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-2">
           Destacados
         </h2>
@@ -51,7 +51,7 @@ export const FeaturedCars: React.FC = () => {
       </div>
 
       {/* Contenedor separado para Swiper */}
-      <div className="container mx-auto px-4 py-5">
+      <div className="md:w-7xl mx-auto px-4 py-5">
         <Swiper
           modules={[Navigation, Autoplay]} // Registra los módulos
           spaceBetween={30} // Espacio entre diapositivas

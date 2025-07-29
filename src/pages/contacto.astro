@@ -7,13 +7,19 @@ const keyHcaptcha = import.meta.env.HCAPTCHA_SITE_KEY;
 
 <Layout title="Contacto - Estamos aquí para ayudarte con todas tus necesidades de vehículos 4x4" description="Estamos aquí para ayudarte con todas tus necesidades de vehículos 4x4" image="/frontis-autoloa.webp">
   <!-- Hero Section -->
-  <section class="bg-gradient-to-br from-gray-900 via-black to-gray-800 py-20 px-4">
-    <div class="max-w-7xl mx-auto text-center">
+  <section class="bg-gradient-to-br from-gray-900 via-black to-gray-800 py-26 px-4 relative">
+    <div
+    class="absolute inset-0 z-0"
+    style={{
+      backgroundImage: `radial-gradient(circle 500px at 50% 200px, #3e3e3e, transparent)`,
+    }}
+  />
+    <div class="max-w-7xl mx-auto text-center z-10 relative">
       <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
         Hablemos
       </h1>
       <p class="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-        Estamos aquí para ayudarte a encontrar el vehículo 4x4 perfecto para tus aventuras
+        Estamos aquí para ayudarte a encontrar el auto perfecto para tus aventuras.
       </p>
     </div>
   </section>
@@ -42,7 +48,7 @@ const keyHcaptcha = import.meta.env.HCAPTCHA_SITE_KEY;
                     name="name"
                     required
                     placeholder="Tu nombre"
-                    class="w-full px-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-500"
+                    class="w-full px-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-500"
                   />
                 </div>
                 <div class="space-y-2">
@@ -53,7 +59,7 @@ const keyHcaptcha = import.meta.env.HCAPTCHA_SITE_KEY;
                     name="phone"
                     required
                     placeholder="+56 9 1234 5678"
-                    class="w-full px-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-500"
+                    class="w-full px-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-500"
                   />
                 </div>
               </div>
@@ -66,7 +72,7 @@ const keyHcaptcha = import.meta.env.HCAPTCHA_SITE_KEY;
                   name="email"
                   required
                   placeholder="tu@email.com"
-                  class="w-full px-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-500"
+                  class="w-full px-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-500"
                 />
               </div>
               
@@ -78,7 +84,7 @@ const keyHcaptcha = import.meta.env.HCAPTCHA_SITE_KEY;
                   rows="5"
                   required
                   placeholder="Cuéntanos en qué podemos ayudarte..."
-                  class="w-full px-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-500 resize-none"
+                  class="w-full px-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-500 resize-none"
                 ></textarea>
               </div>
 
@@ -90,7 +96,7 @@ const keyHcaptcha = import.meta.env.HCAPTCHA_SITE_KEY;
               
               <button
                 type="submit"
-                class="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 px-8 rounded-xl transition-all duration-200 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 shadow-lg"
+                class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-xl transition-all duration-200 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 shadow-lg"
               >
                 Enviar mensaje
               </button>
@@ -126,7 +132,7 @@ const keyHcaptcha = import.meta.env.HCAPTCHA_SITE_KEY;
                   </svg>
                 </div>
                 <div>
-                  <p class="text-sm font-semibold text-gray-900">Fono</p>
+                  <p class="text-sm font-semibold text-gray-900">Fono 2</p>
                   <p class="text-gray-600">+56 9659 45652</p>
                 </div>
               </div>
@@ -177,10 +183,7 @@ const keyHcaptcha = import.meta.env.HCAPTCHA_SITE_KEY;
           <div class="bg-white rounded-3xl shadow-sm p-8">
             <h3 class="text-2xl font-bold text-gray-900 mb-6">¿Por qué elegirnos?</h3>
             <div class="space-y-4">
-              <div class="flex items-center space-x-3">
-                <div class="w-2 h-2 bg-yellow-500 rounded-full"></div>
-                <p class="text-gray-700">10+ años de experiencia</p>
-              </div>
+        
               <div class="flex items-center space-x-3">
                 <div class="w-2 h-2 bg-yellow-500 rounded-full"></div>
                 <p class="text-gray-700">Crédito automotriz</p>
@@ -207,7 +210,7 @@ const keyHcaptcha = import.meta.env.HCAPTCHA_SITE_KEY;
         
         <div class="aspect-w-16 aspect-h-9">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3687.2272525556286!2d-68.93130362407523!3d-22.458092921990694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96ac09c7966c840b%3A0x20e26b7803579cd!2sAutomotriz%20el%20Loa%20-%20Av.%20Granaderos%202223%2C%201390695%20Calama%2C%20Antofagasta!5e0!3m2!1ses-419!2scl!4v1752675414861!5m2!1ses-419!2scl"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3332.494026174804!2d-70.5212702245882!3d-33.358166192791614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cbddbea05483%3A0x434445016ab52c5c!2sAv.%20La%20Dehesa%201500%2C%20Torre%202%2C%20piso%204%2C%20oficina%208%2C%207690253%20Santiago%2C%20Lo%20Barnechea%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses-419!2scl!4v1753760354023!5m2!1ses-419!2scl"
             width="100%"
             height="400"
             style="border:0;"
@@ -275,7 +278,7 @@ const keyHcaptcha = import.meta.env.HCAPTCHA_SITE_KEY;
     } catch (error) {
       // Show error message
       statusText.textContent = 'Error al enviar el mensaje. Por favor, intenta nuevamente o contáctanos directamente.';
-      formStatus.className = 'text-orange-700 text-center p-4 bg-orange-50 rounded-xl border border-orange-200';
+      formStatus.className = 'text-red-700 text-center p-4 bg-red-50 rounded-xl border border-red-200';
     } finally {
       // Re-enable form
       form.querySelectorAll('input, textarea, button').forEach((el) => {

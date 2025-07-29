@@ -26,7 +26,7 @@ const slideImages: SlideData[] = [
   {
     src: slide01.src,
     alt: "Interior moderno de automóvil",
-    title: "Wild Cars",
+    title: "En Wild Cars",
     subtitle: "Tu próximo auto te está esperando",
   },
   {
@@ -44,8 +44,8 @@ const slideImages: SlideData[] = [
   {
     src: slide04.src,
     alt: "Auto eléctrico cargando",
-    title: "Futuro Sostenible",
-    subtitle: "Vehículos eléctricos e híbridos",
+    title: "Encuentra tu Auto Ideal",
+    subtitle: "Autos de las mejores marcas",
   },
   {
     src: slide05.src,
@@ -95,17 +95,8 @@ const HeroSlider: React.FC = () => {
 
   return (
     <section className="hero-section my-14 py-8 sm:py-12 lg:py-16 relative overflow-hidden">
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: `
-        radial-gradient(125% 125% at 50% 90%, #ffffff 40%, #dc2626 100%)
-      `,
-          backgroundSize: "100% 100%",
-        }}
-      />
-
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    
+      <div className="md:w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Swiper
           ref={swiperRef}
           modules={[Navigation, Pagination, Autoplay, EffectFade]}
@@ -136,13 +127,13 @@ const HeroSlider: React.FC = () => {
         >
           {slideImages.map((slide, index) => (
             <SwiperSlide key={index}>
-              <div className="relative h-80 sm:h-96 md:h-[450px] lg:h-[500px] overflow-hidden rounded-[20px] sm:rounded-[30px] lg:rounded-[50px] shadow-2xl">
+              <div className="relative h-80 sm:h-96 md:h-[450px] lg:h-[500px] overflow-hidden rounded-[20px] sm:rounded-[30px] lg:rounded-[50px] ">
                 <img
                   src={slide.src}
                   alt={slide.alt}
                   className="w-full h-full object-cover object-center"
                 />
-                <div className="absolute inset-0 bg-black/50 flex items-center">
+                <div className="absolute inset-0 bg-black/50 flex items-center rounded-[20px] sm:rounded-[30px] lg:rounded-[50px]">
                   <div className="container mx-auto px-12 sm:px-8 lg:px-[130px]">
                     <div className="max-w-full sm:max-w-2xl lg:max-w-3xl text-white">
                       <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 leading-tight">

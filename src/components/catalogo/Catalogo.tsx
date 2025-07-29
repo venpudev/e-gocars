@@ -187,7 +187,7 @@ export function Catalogo() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="md:w-7xl mx-auto px-4 py-24">
       {/* Header */}
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-dark mb-4">
