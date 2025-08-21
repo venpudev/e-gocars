@@ -1,4 +1,4 @@
-import type { APIRoute } from "astro";
+import type { APIContext } from "astro";
 import { Resend } from "resend";
 
 export const prerender = false;
@@ -7,7 +7,7 @@ export const prerender = false;
 const resend = new Resend(import.meta.env.RESEND_API_KEY);
 const HCAPTCHA_SECRET_KEY = import.meta.env.HCAPTCHA_SECRET_KEY;
 
-export const POST: APIRoute = async ({ request }) => {
+export async function POST({ request }: APIContext) {
   try {
     const data = await request.json();
     const { name, email, phone, message, interest } = data;
@@ -33,7 +33,7 @@ export const POST: APIRoute = async ({ request }) => {
     // --- Fin de la Verificación ---
 
     let htmlContent = `
-      <h2>Nuevo mensaje desde el sitio web E-GoCars</h2>
+      <h2>Nuevo mensaje desde el sitio web E-GoCars (PRUEBA)</h2>
       <p><strong>Nombre:</strong> ${name || 'No especificado'}</p>
       <p><strong>Email:</strong> ${email || 'No especificado'}</p>
       <p><strong>Teléfono:</strong> ${phone || 'No especificado'}</p>
@@ -48,14 +48,12 @@ export const POST: APIRoute = async ({ request }) => {
       <p>${message || 'No especificado'}</p>
     `;
 
-   // ...
-const { data: emailData, error } = await resend.emails.send({
-  from: "E-GoCars <onboarding@resend.dev>",
-  to: ["maravena@eserp.cl"], // <-- TU CORREO PARA LA PRUEBA
-  subject: `(PRUEBA E-GoCars) Nuevo mensaje de ${name}`, // Añadí PRUEBA al asunto
-  html: htmlContent,
-});
-// ...
+    const { data: emailData, error } = await resend.emails.send({
+      from: "E-GoCars <onboarding@resend.dev>",
+      to: ["maravena@eserp.cl"], // <-- TU CORREO PARA LA PRUEBA
+      subject: `(PRUEBA E-GoCars) Nuevo mensaje de ${name}`,
+      html: htmlContent,
+    });
 
     if (error) {
       throw new Error(error.message);
@@ -66,4 +64,4 @@ const { data: emailData, error } = await resend.emails.send({
   } catch (err: any) {
     return new Response(JSON.stringify({ error: err.message || "Error interno del servidor" }), { status: 500 });
   }
-};
+}
