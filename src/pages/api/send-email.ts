@@ -48,13 +48,14 @@ export const POST: APIRoute = async ({ request }) => {
       <p>${message || 'No especificado'}</p>
     `;
 
-    const { data: emailData, error } = await resend.emails.send({
-      from: "E-GoCars <onboarding@resend.dev>",
-      to: ["gocarschile@gmail.com"], // <-- CORREO PRINCIPAL DEL CLIENTE
-      cc: ["maravena@eserp.cl"],      // <-- TU CORREO PARA RECIBIR UNA COPIA
-      subject: `(E-GoCars) Nuevo mensaje de ${name}`,
-      html: htmlContent,
-    });
+   // ...
+const { data: emailData, error } = await resend.emails.send({
+  from: "E-GoCars <onboarding@resend.dev>",
+  to: ["maravena@eserp.cl"], // <-- TU CORREO PARA LA PRUEBA
+  subject: `(PRUEBA E-GoCars) Nuevo mensaje de ${name}`, // Añadí PRUEBA al asunto
+  html: htmlContent,
+});
+// ...
 
     if (error) {
       throw new Error(error.message);
