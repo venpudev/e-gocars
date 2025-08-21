@@ -1,92 +1,102 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/hero-slider/Hero';
+import Brand from '../components/banner-brand/Brand.astro';
+import Testimonials from '../components/testimonials/Testimonials.astro';
+
+// Lee la clave de hCaptcha desde las variables de entorno
+const keyHcaptcha: string = import.meta.env.PUBLIC_HCAPTCHA_SITE_KEY ?? '';
 ---
 
 <Layout title="E-GoCars - Compra y Vende tu Auto con Confianza">
   
   <Hero client:load/>
 
-{/*--- COPIA Y PEGA ESTE BLOQUE COMPLETO EN index.astro ---*/}
+  <section class="py-20 bg-gray-900">
+    <div class="max-w-4xl mx-auto px-4">
+      
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-white mb-4">¡Da el primer paso!</h2>
+        <p class="text-lg text-gray-300">Completa el formulario y un especialista de E-GoCars te contactará.</p>
+      </div>
 
-<section class="py-20 bg-gray-900">
-  <div class="max-w-4xl mx-auto px-4">
-    
-    <div class="text-center mb-12">
-      <h2 class="text-4xl font-bold text-white mb-4">¡Da el primer paso!</h2>
-      <p class="text-lg text-gray-300">Completa el formulario y un especialista de E-GoCars te contactará.</p>
-    </div>
-
-    <div class="bg-gray-800 p-8 md:p-12 rounded-2xl shadow-2xl border border-gray-700">
-      <form id="commercial-form-home" class="space-y-6">
-
-        <div class="grid grid-cols-3 gap-3 text-center">
-          <label class="relative">
-            <input type="radio" name="interest" value="Comprar" class="peer sr-only" checked>
-            <div class="p-4 rounded-lg bg-gray-700 cursor-pointer text-white peer-checked:bg-amber-500 peer-checked:text-black font-semibold transition-all">Comprar</div>
-          </label>
-          <label class="relative">
-            <input type="radio" name="interest" value="Vender" class="peer sr-only">
-            <div class="p-4 rounded-lg bg-gray-700 cursor-pointer text-white peer-checked:bg-amber-500 peer-checked:text-black font-semibold transition-all">Vender</div>
-          </label>
-          <label class="relative">
-            <input type="radio" name="interest" value="Consignar" class="peer sr-only">
-            <div class="p-4 rounded-lg bg-gray-700 cursor-pointer text-white peer-checked:bg-amber-500 peer-checked:text-black font-semibold transition-all">Consignar</div>
-          </label>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="space-y-2">
-            <label for="name-home-commercial" class="block text-sm font-semibold text-white">Nombre</label>
-            <input type="text" id="name-home-commercial" name="name" required placeholder="Tu nombre completo"
-                   class="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 transition-all placeholder-gray-400"/>
+      <div class="bg-gray-800 p-8 md:p-12 rounded-2xl shadow-2xl border border-gray-700">
+        <form id="commercial-form-home" class="space-y-6">
+          <div class="grid grid-cols-3 gap-3 text-center">
+            <label class="relative">
+              <input type="radio" name="interest" value="Comprar" class="peer sr-only" checked>
+              <div class="p-4 rounded-lg bg-gray-700 cursor-pointer text-white peer-checked:bg-amber-500 peer-checked:text-black font-semibold transition-all">Comprar</div>
+            </label>
+            <label class="relative">
+              <input type="radio" name="interest" value="Vender" class="peer sr-only">
+              <div class="p-4 rounded-lg bg-gray-700 cursor-pointer text-white peer-checked:bg-amber-500 peer-checked:text-black font-semibold transition-all">Vender</div>
+            </label>
+            <label class="relative">
+              <input type="radio" name="interest" value="Consignar" class="peer sr-only">
+              <div class="p-4 rounded-lg bg-gray-700 cursor-pointer text-white peer-checked:bg-amber-500 peer-checked:text-black font-semibold transition-all">Consignar</div>
+            </label>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <label for="name-home-commercial" class="block text-sm font-semibold text-white">Nombre</label>
+              <input type="text" id="name-home-commercial" name="name" required placeholder="Tu nombre completo" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 transition-all placeholder-gray-400"/>
+            </div>
+            <div class="space-y-2">
+              <label for="phone-home-commercial" class="block text-sm font-semibold text-white">Teléfono</label>
+              <input type="tel" id="phone-home-commercial" name="phone" required placeholder="+56 9 1234 5678" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 transition-all placeholder-gray-400"/>
+            </div>
           </div>
           <div class="space-y-2">
-            <label for="phone-home-commercial" class="block text-sm font-semibold text-white">Teléfono</label>
-            <input type="tel" id="phone-home-commercial" name="phone" required placeholder="+56 9 1234 5678"
-                   class="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 transition-all placeholder-gray-400"/>
+            <label for="message-home-commercial" class="block text-sm font-semibold text-white">Mensaje Adicional</label>
+            <textarea id="message-home-commercial" name="message" rows="4" required placeholder="Ej: Busco un Mazda 3, quiero vender mi Ford Ranger, etc." class="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 transition-all resize-none placeholder-gray-400"></textarea>
           </div>
-        </div>
-        
-        <div class="space-y-2">
-          <label for="message-home-commercial" class="block text-sm font-semibold text-white">Mensaje Adicional</label>
-          <textarea id="message-home-commercial" name="message" rows="4" required placeholder="Ej: Busco un Mazda 3, quiero vender mi Ford Ranger, etc."
-                    class="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 transition-all resize-none placeholder-gray-400"></textarea>
-        </div>
-        
-        <div id="form-status-commercial" class="hidden" aria-live="polite">
-          <p class="text-center font-medium"></p>
-        </div>
-        
-        <button type="submit"
-                class="w-full bg-amber-500 hover:bg-amber-600 text-black font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2 focus:ring-offset-gray-800 shadow-lg text-lg">
-          Contactar a un Ejecutivo
-        </button>
-      </form>
+          <div class="h-captcha" data-sitekey={keyHcaptcha} data-theme="dark"></div>
+          <div id="form-status-commercial" class="hidden" aria-live="polite"><p class="text-center font-medium"></p></div>
+          <button type="submit" class="w-full bg-amber-500 hover:bg-amber-600 text-black font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2 focus:ring-offset-gray-800 shadow-lg text-lg">
+            Contactar a un Ejecutivo
+          </button>
+        </form>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <Testimonials />
+  <Brand />
+</Layout>
+
 <script>
-  const form = document.getElementById('commercial-form-home') as HTMLFormElement;
-  const formStatus = document.getElementById('form-status-commercial');
-  const statusText = formStatus?.querySelector('p');
+  // Script para el formulario de la página de inicio
+  const formHome = document.getElementById('commercial-form-home') as HTMLFormElement;
+  const formStatusHome = document.getElementById('form-status-commercial');
+  const statusTextHome = formStatusHome?.querySelector('p');
+  const keyHcaptcha = document.querySelector('.h-captcha')?.getAttribute('data-sitekey');
 
-  form?.addEventListener('submit', async (e) => {
+  formHome?.addEventListener('submit', async (e) => {
     e.preventDefault();
-    
-    if (!form || !formStatus || !statusText) return;
+    if (!formHome || !formStatusHome || !statusTextHome) return;
 
-    const formData = new FormData(form);
+    const hcaptchaResponse = (window as any).hcaptcha?.getResponse();
+    if (keyHcaptcha && !hcaptchaResponse) {
+        statusTextHome.textContent = 'Por favor, completa la verificación de seguridad.';
+        formStatusHome.className = 'text-red-500 text-center p-3 bg-red-100 rounded-xl';
+        formStatusHome.classList.remove('hidden');
+        return;
+    }
+
+    const formData = new FormData(formHome);
     const data = Object.fromEntries(formData.entries());
-    
-    const submitButton = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+    if (keyHcaptcha) {
+        data['h-captcha-response'] = hcaptchaResponse;
+    }
+
+    const submitButton = formHome.querySelector('button[type="submit"]') as HTMLButtonElement;
     const originalText = submitButton.textContent;
     submitButton.disabled = true;
     submitButton.textContent = 'Enviando...';
     
-    formStatus.classList.remove('hidden');
-    statusText.textContent = 'Enviando tu solicitud...';
-    formStatus.className = 'text-gray-300 text-center p-3 bg-gray-700 rounded-xl';
+    statusTextHome.textContent = 'Enviando tu solicitud...';
+    statusTextHome.className = 'text-gray-300 text-center p-3 bg-gray-700 rounded-xl';
+    statusTextHome.classList.remove('hidden');
 
     try {
       const response = await fetch('/api/send-email', {
@@ -94,25 +104,25 @@ import Hero from '../components/hero-slider/Hero';
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       });
-
       const result = await response.json();
       if (result.error) throw new Error(result.error);
 
-      form.reset();
-      statusText.textContent = '¡Solicitud recibida! Te contactaremos pronto.';
-      formStatus.className = 'text-green-700 text-center p-3 bg-green-100 rounded-xl border border-green-200';
+      formHome.reset();
+      if(keyHcaptcha) (window as any).hcaptcha?.reset();
+      statusTextHome.textContent = '¡Solicitud recibida! Te contactaremos pronto.';
+      statusTextHome.className = 'text-green-700 text-center p-3 bg-green-100 rounded-xl border border-green-200';
       
     } catch (error) {
-      statusText.textContent = 'Hubo un error al enviar tu solicitud. Por favor, intenta de nuevo.';
-      formStatus.className = 'text-red-700 text-center p-3 bg-red-100 rounded-xl border border-red-200';
+      if(keyHcaptcha) (window as any).hcaptcha?.reset();
+      statusTextHome.textContent = 'Hubo un error al enviar tu solicitud. Por favor, intenta de nuevo.';
+      statusTextHome.className = 'text-red-700 text-center p-3 bg-red-100 rounded-xl border border-red-200';
     } finally {
       submitButton.disabled = false;
       submitButton.textContent = originalText;
       
       setTimeout(() => {
-        formStatus.classList.add('hidden');
+        formStatusHome.classList.add('hidden');
       }, 5000);
     }
   });
 </script>
-</Layout>
