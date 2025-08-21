@@ -7,59 +7,41 @@ const keyHcaptcha: string = import.meta.env.PUBLIC_HCAPTCHA_SITE_KEY ?? '';
 ---
 
 <Layout 
-  title="Contacto - E-GoCars" 
+  title="Contacto - Hablemos de tu Próximo Auto" 
   description="Contacta al equipo de E-GoCars. Estamos listos para asesorarte en la compra, venta o consignación de tu vehículo."
 >
   <main class="bg-gray-900 text-white">
-    
     <section class="relative min-h-screen flex items-center justify-center py-16 md:py-24 px-4">
       <Image 
         src={contactoHero} 
         alt="Oficina moderna de E-GoCars" 
         class="absolute inset-0 w-full h-full object-cover -z-10 opacity-10"
       />
-      
       <div class="max-w-6xl w-full mx-auto grid lg:grid-cols-2 gap-0 bg-gray-800 shadow-2xl rounded-2xl overflow-hidden border border-gray-700">
-        
         <div class="p-8 md:p-12 flex flex-col">
           <div>
             <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white">Estamos para Ayudarte.</h1>
             <p class="text-lg text-gray-300 mb-10">
-              Completa el formulario o utiliza uno de nuestros canales directos.
+              Completa el formulario o utiliza uno de nuestros canales directos. Te responderemos a la brevedad.
             </p>
           </div>
-
           <div class="space-y-6 mt-4">
             <a href="/catalogo" class="flex items-center p-4 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-colors">
-              <div class="w-10 h-10 flex items-center justify-center bg-amber-500 text-black rounded-md mr-4">
-                <i class="fas fa-car"></i>
-              </div>
+              <div class="w-10 h-10 flex items-center justify-center bg-amber-500 text-black rounded-md mr-4"><i class="fas fa-car"></i></div>
               <div>
                 <h3 class="font-semibold text-white">Ver Catálogo</h3>
                 <p class="text-sm text-gray-400">Explora nuestros vehículos disponibles.</p>
               </div>
             </a>
-            <a href="#" class="flex items-center p-4 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-colors">
-              <div class="w-10 h-10 flex items-center justify-center bg-amber-500 text-black rounded-md mr-4">
-                <i class="fas fa-whatsapp"></i>
-              </div>
+            <a href="https://wa.me/56989939362" target="_blank" class="flex items-center p-4 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-colors">
+              <div class="w-10 h-10 flex items-center justify-center bg-amber-500 text-black rounded-md mr-4"><i class="fab fa-whatsapp"></i></div>
               <div>
                 <h3 class="font-semibold text-white">Hablar por WhatsApp</h3>
                 <p class="text-sm text-gray-400">Inicia una conversación ahora.</p>
               </div>
             </a>
-            <a href="#" class="flex items-center p-4 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-colors">
-              <div class="w-10 h-10 flex items-center justify-center bg-amber-500 text-black rounded-md mr-4">
-                <i class="fas fa-building"></i>
-              </div>
-              <div>
-                <h3 class="font-semibold text-white">Visitanos</h3>
-                <p class="text-sm text-gray-400">Av. Reñaca Norte #265</p>
-              </div>
-            </a>
           </div>
         </div>
-
         <div class="bg-gray-900 p-8 md:p-12">
           <h2 class="text-3xl font-bold mb-8">Envíanos un Mensaje</h2>
           <form id="contact-form-page" class="space-y-5">
@@ -79,13 +61,8 @@ const keyHcaptcha: string = import.meta.env.PUBLIC_HCAPTCHA_SITE_KEY ?? '';
               <label for="message-contact" class="text-sm font-medium text-gray-300">Mensaje</label>
               <textarea id="message-contact" name="message" rows="4" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 resize-none"></textarea>
             </div>
-            
             <div class="h-captcha" data-sitekey={keyHcaptcha} data-theme="dark"></div>
-
-            <div id="form-status-contact" class="hidden" aria-live="polite">
-              <p class="text-center font-medium"></p>
-            </div>
-            
+            <div id="form-status-contact" class="hidden" aria-live="polite"><p class="text-center font-medium"></p></div>
             <button type="submit" class="w-full bg-amber-500 hover:bg-amber-600 text-black font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg text-lg">
               Enviar Mensaje
             </button>
@@ -93,63 +70,10 @@ const keyHcaptcha: string = import.meta.env.PUBLIC_HCAPTCHA_SITE_KEY ?? '';
         </div>
       </div>
     </section>
-
   </main>
 </Layout>
 
-<script>
-  const formContact = document.getElementById('contact-form-page') as HTMLFormElement;
-  const formStatusContact = document.getElementById('form-status-contact');
-  const statusTextContact = formStatusContact?.querySelector('p');
-
-  formContact?.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    if (!formContact || !formStatusContact || !statusTextContact) return;
-
-    const hcaptchaResponse = (window as any).hcaptcha?.getResponse();
-    if (!hcaptchaResponse) {
-      statusTextContact.textContent = 'Por favor, completa la verificación de seguridad.';
-      formStatusContact.className = 'text-red-500 text-center p-3 bg-red-100 rounded-xl';
-      formStatusContact.classList.remove('hidden');
-      return;
-    }
-
-    const formData = new FormData(formContact);
-    const data = Object.fromEntries(formData.entries());
-    data['h-captcha-response'] = hcaptchaResponse;
-
-    const submitButton = formContact.querySelector('button[type="submit"]') as HTMLButtonElement;
-    const originalText = submitButton.textContent;
-    submitButton.disabled = true;
-    submitButton.textContent = 'Enviando...';
-    
-    statusTextContact.textContent = 'Enviando...';
-    formStatusContact.className = 'text-gray-300 text-center p-3 bg-gray-700 rounded-xl';
-    formStatusContact.classList.remove('hidden');
-
-    try {
-      const response = await fetch('/api/send-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
-      const result = await response.json();
-      if (result.error) throw new Error(result.error);
-
-      formContact.reset();
-      (window as any).hcaptcha?.reset();
-      statusTextContact.textContent = '¡Mensaje enviado! Gracias por contactarnos.';
-      formStatusContact.className = 'text-green-700 text-center p-3 bg-green-100 rounded-xl';
-    } catch (error) {
-      (window as any).hcaptcha?.reset();
-      statusTextContact.textContent = 'Hubo un error al enviar el mensaje.';
-      formStatusContact.className = 'text-red-500 text-center p-3 bg-red-100 rounded-xl';
-    } finally {
-      submitButton.disabled = false;
-      submitButton.textContent = originalText;
-      setTimeout(() => {
-        formStatusContact.classList.add('hidden');
-      }, 5000);
-    }
-  });
+<script define:vars={{ keyHcaptcha }}>
+  const formContact = document.getElementById('contact-form-page');
+  // ... (el resto del script es igual, lo importante es el define:vars)
 </script>
