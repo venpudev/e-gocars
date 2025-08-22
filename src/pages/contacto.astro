@@ -2,13 +2,11 @@
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import contactoHero from "../assets/contacto-hero.jpg";
-
-const keyHcaptcha: string = import.meta.env.PUBLIC_HCAPTCHA_SITE_KEY ?? '';
 ---
 
 <Layout 
   title="Contacto - Hablemos de tu Próximo Auto" 
-  description="Contacta al equipo de E-GoCars. Estamos listos para asesorarte en la compra, venta o consignación de tu vehículo."
+  description="Contacta al equipo de E-GoCars."
 >
   <main class="bg-gray-900 text-white">
     <section class="relative min-h-screen flex items-center justify-center py-16 md:py-24 px-4">
@@ -20,49 +18,46 @@ const keyHcaptcha: string = import.meta.env.PUBLIC_HCAPTCHA_SITE_KEY ?? '';
       <div class="max-w-6xl w-full mx-auto grid lg:grid-cols-2 gap-0 bg-gray-800 shadow-2xl rounded-2xl overflow-hidden border border-gray-700">
         <div class="p-8 md:p-12 flex flex-col">
           <div>
-            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white">Estamos para Ayudarte.</h1>
-            <p class="text-lg text-gray-300 mb-10">
-              Completa el formulario o utiliza uno de nuestros canales directos. Te responderemos a la brevedad.
-            </p>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Estamos para Ayudarte</h1>
+            <p class="text-lg text-gray-300 mb-10">Completa el formulario o utiliza nuestros canales directos.</p>
           </div>
           <div class="space-y-6 mt-4">
             <a href="/catalogo" class="flex items-center p-4 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-colors">
               <div class="w-10 h-10 flex items-center justify-center bg-amber-500 text-black rounded-md mr-4"><i class="fas fa-car"></i></div>
               <div>
                 <h3 class="font-semibold text-white">Ver Catálogo</h3>
-                <p class="text-sm text-gray-400">Explora nuestros vehículos disponibles.</p>
+                <p class="text-sm text-gray-400">Explora nuestros vehículos.</p>
               </div>
             </a>
             <a href="https://wa.me/56989939362" target="_blank" class="flex items-center p-4 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-colors">
               <div class="w-10 h-10 flex items-center justify-center bg-amber-500 text-black rounded-md mr-4"><i class="fab fa-whatsapp"></i></div>
               <div>
                 <h3 class="font-semibold text-white">Hablar por WhatsApp</h3>
-                <p class="text-sm text-gray-400">Inicia una conversación ahora.</p>
+                <p class="text-sm text-gray-400">Inicia una conversación.</p>
               </div>
             </a>
           </div>
         </div>
         <div class="bg-gray-900 p-8 md:p-12">
           <h2 class="text-3xl font-bold mb-8">Envíanos un Mensaje</h2>
-          <form id="contact-form-page" class="space-y-5">
+          
+          <form action="https://formspree.io/f/xkgzdnnq" method="POST" class="space-y-5">
             <div class="space-y-2">
-              <label for="name-contact" class="text-sm font-medium text-gray-300">Nombre</label>
-              <input type="text" id="name-contact" name="name" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"/>
+              <label for="name" class="text-sm font-medium text-gray-300">Nombre</label>
+              <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"/>
             </div>
             <div class="space-y-2">
-              <label for="email-contact" class="text-sm font-medium text-gray-300">Email</label>
-              <input type="email" id="email-contact" name="email" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"/>
+              <label for="email" class="text-sm font-medium text-gray-300">Email</label>
+              <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"/>
             </div>
             <div class="space-y-2">
-              <label for="phone-contact" class="text-sm font-medium text-gray-300">Teléfono</label>
-              <input type="tel" id="phone-contact" name="phone" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"/>
+              <label for="phone" class="text-sm font-medium text-gray-300">Teléfono</label>
+              <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"/>
             </div>
             <div class="space-y-2">
-              <label for="message-contact" class="text-sm font-medium text-gray-300">Mensaje</label>
-              <textarea id="message-contact" name="message" rows="4" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 resize-none"></textarea>
+              <label for="message" class="text-sm font-medium text-gray-300">Mensaje</label>
+              <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 resize-none"></textarea>
             </div>
-            <div class="h-captcha" data-sitekey={keyHcaptcha} data-theme="dark"></div>
-            <div id="form-status-contact" class="hidden" aria-live="polite"><p class="text-center font-medium"></p></div>
             <button type="submit" class="w-full bg-amber-500 hover:bg-amber-600 text-black font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg text-lg">
               Enviar Mensaje
             </button>
@@ -72,8 +67,3 @@ const keyHcaptcha: string = import.meta.env.PUBLIC_HCAPTCHA_SITE_KEY ?? '';
     </section>
   </main>
 </Layout>
-
-<script define:vars={{ keyHcaptcha }}>
-  const formContact = document.getElementById('contact-form-page');
-  // ... (el resto del script es igual, lo importante es el define:vars)
-</script>dasdasdad
