@@ -3,7 +3,6 @@ import { Resend } from "resend";
 
 export const prerender = false;
 
-// Se inicializa Resend con la API Key desde las variables de entorno de Vercel
 const resend = new Resend(import.meta.env.RESEND_API_KEY);
 const HCAPTCHA_SECRET_KEY = import.meta.env.HCAPTCHA_SECRET_KEY;
 
@@ -13,7 +12,6 @@ export async function POST({ request }: APIContext) {
     const { name, email, phone, message, interest } = data;
     const captchaToken = data['h-captcha-response'];
 
-    // --- Verificación de hCaptcha en el Servidor ---
     if (HCAPTCHA_SECRET_KEY && captchaToken) {
       const verifyUrl = `https://hcaptcha.com/siteverify`;
       const params = new URLSearchParams();
@@ -30,28 +28,21 @@ export async function POST({ request }: APIContext) {
         return new Response(JSON.stringify({ error: "Verificación de Captcha fallida." }), { status: 400 });
       }
     }
-    // --- Fin de la Verificación ---
 
     let htmlContent = `
       <h2>Nuevo mensaje desde el sitio web E-GoCars (PRUEBA)</h2>
       <p><strong>Nombre:</strong> ${name || 'No especificado'}</p>
       <p><strong>Email:</strong> ${email || 'No especificado'}</p>
       <p><strong>Teléfono:</strong> ${phone || 'No especificado'}</p>
-    `;
-
-    if (interest) {
-      htmlContent += `<p><strong>Interés:</strong> ${interest}</p>`;
-    }
-
-    htmlContent += `
+      <p><strong>Interés:</strong> ${interest || 'No especificado'}</p>
       <p><strong>Mensaje:</strong></p>
       <p>${message || 'No especificado'}</p>
     `;
 
     const { data: emailData, error } = await resend.emails.send({
       from: "E-GoCars <onboarding@resend.dev>",
-      to: ["maravena@eserp.cl"], // <-- TU CORREO PARA LA PRUEBA
-      subject: `(PRUEBA E-GoCars) Nuevo mensaje de ${name}`,
+      to: ["maravena@eserp.cl"], // <-- ÚNICO CORREO DE PRUEBA
+      subject: `(PRUEBA E-GoCars) Mensaje de ${name}`,
       html: htmlContent,
     });
 
